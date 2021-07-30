@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrintCtrl", "PrintCtrl.vcproj", "{4C2AFA03-DE9E-4953-A125-0EF7FB8076B1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrintVc7", "..\PrintVc7\PrintVc7.vcproj", "{C6271F4D-05EE-48A0-B4FB-08868AB0275E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4C2AFA03-DE9E-4953-A125-0EF7FB8076B1}.Debug.ActiveCfg = Debug|Win32
+		{4C2AFA03-DE9E-4953-A125-0EF7FB8076B1}.Debug.Build.0 = Debug|Win32
+		{4C2AFA03-DE9E-4953-A125-0EF7FB8076B1}.Release.ActiveCfg = Release|Win32
+		{4C2AFA03-DE9E-4953-A125-0EF7FB8076B1}.Release.Build.0 = Release|Win32
+		{C6271F4D-05EE-48A0-B4FB-08868AB0275E}.Debug.ActiveCfg = Debug|Win32
+		{C6271F4D-05EE-48A0-B4FB-08868AB0275E}.Debug.Build.0 = Debug|Win32
+		{C6271F4D-05EE-48A0-B4FB-08868AB0275E}.Release.ActiveCfg = Release|Win32
+		{C6271F4D-05EE-48A0-B4FB-08868AB0275E}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

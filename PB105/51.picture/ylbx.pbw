@@ -1,0 +1,9 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "trade.pbt";
+ 1 "picture\\picture.pbt";
+@end;
+DefaultTarget "picture\\picture.pbt";
+DefaultRemoteTarget "picture\\picture.pbt";

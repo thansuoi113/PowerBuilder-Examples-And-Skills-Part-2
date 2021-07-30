@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "dynamicdw.pbt";
+@end;
+DefaultTarget "dynamicdw.pbt";
+DefaultRemoteTarget "dynamicdw.pbt";

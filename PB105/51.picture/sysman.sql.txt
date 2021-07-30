@@ -1,0 +1,19 @@
+if exists (select * from sysobjects where id = object_id(N'[dbo].[sysman]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[sysman]
+GO
+
+CREATE TABLE [dbo].[sysman] (
+	[id] [char](10) NOT NULL , ,
+	[name] [char] (10) NULL ,
+	[text] [char] (40) NULL ,
+	[pict] [image] NULL 
+) ON [PRIMARY] 
+GO
+
+CREATE  UNIQUE INDEX [sysman_index] ON [dbo].[sysman]([id]) ON [PRIMARY]
+GO	
+
+GRANT  REFERENCES ,  SELECT ,  INSERT ,  DELETE ,  UPDATE  ON [dbo].[sysman]  TO [public]
+GO
+
+

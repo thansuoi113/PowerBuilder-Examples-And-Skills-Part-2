@@ -1,0 +1,206 @@
+The function declaration is as follows:
+Function boolean AnimateWindow( &
+   long lhWnd, long lTm, long lFlags) library'user32'
+The first parameter lhWnd is the corresponding window handle, the second parameter is the duration of the animation, the larger the value, the longer the duration, and the last parameter is the animation type.
+The following is an example of calling
+// Animate the window from left to right
+Constant Long AW_HOR_POSITIVE = 1
+// Animate the window from right to left
+Constant Long AW_HOR_NEGATIVE = 2
+//From top to bottom to produce animation effect
+Constant Long AW_VER_POSITIVE = 4
+// Bottom-up animation effect
+Constant Long AW_VER_NEGATIVE = 8
+// Show the effect of collapsing inward
+Constant Long AW_CENTER = 16
+// hide the window
+Constant Long AW_HIDE = 65536
+// activate window
+Constant Long AW_ACTIVATE = 131072
+// Slideshow effect
+Constant Long AW_SLIDE = 262144
+// gradually fade the effect
+Constant Long AW_BLEND = 524288
+AnimateWindow( Handle( this ), 500, AW_VER_NEGATIVE)
+
+
+2. SHAddToRecentDocs adds the file to the list of recently used files
+When the user opens a file using Explorer or other applications, shortcuts to these files will be added under the document menu in the start menu, but it must be noted that not all shortcuts to documents or programs will be added to this menu Sometimes users will want to be able to add these shortcuts manually.
+    The function declaration format is as follows:
+Subroutine SHAddToRecentDocs( uint dwFlags, ref string dwData) &
+   Library'shell32.dll'
+Long ll_SHARD_PATH = 2
+String ls_File
+    
+// The user can replace the following text line as needed
+ls_File ='c:\ken.txt'
+SHAddtoRecentDocs( ll_SHARD_PATH, ls_file)
+So every time this function is called, the shortcut of the document will be added under the document menu. Of course, if the user passes an empty string, Windows will clear all shortcuts under the document menu.
+3. Increase the width of the drop-down combo box
+    The drop-down box in the data window supports that the width of the drop-down part is greater than the width of the text box part. However, for the standard drop-down combo box, PowerBuilder does not provide direct support for this feature. In fact, Windows itself supports this function. The user only needs to send the CB_SETDROPPEDWIDTH message to the window handle of the drop-down combo box to change the width of the drop-down part.
+code show as below:
+Constant long CB_SETDROPPEDWIDTH = 352
+Constant long CB_GETDROPPEDWIDTH = 351
+MessageBox( "Current Width", Send( Handle( ddlb_1 ), &
+   CB_GETDROPPEDWIDTH, 0, 0))
+Send( Handle( ddlb_1 ), CB_SETDROPPEDWIDTH, 300, 0)
+4. ShellAboutA function
+This function can be simply used to make an about dialog box, and its use is very similar to the MessageBox function. In addition to displaying the provided text information, this function can also display Windows version information and available memory information. As shown in Figure 36.
+
+This function is declared like this:
+function int ShellAboutA( ulong al_hWnd, string as_szApp, &
+   string as_szOtherStuff, ulong hIcon) library "shell32"
+Calling code example:
+ShellAboutA( handle( parent ), "Window Title#more text", &
+   "Still more text", 0)
+The result of the call is that Window Title is the title of the dialog box, and more text appears in the first line of the window. More text is used as the description of the window information theme. For the specific display effect, users can try to call this function to be clear.
+5. Shorten path display text
+Although Windows provides many functions to display the path of a long file name in a small area in the application, it may be more meaningful if the path can be shortened according to the size of the area. It can be done like this:
+Function long GetDC( long hWnd) Library "user32"
+function long PathCompactPathA( long lhDC, &
+ref string as_Text, long al_Len) library'shlwapi'
+Function long ReleaseDC( long hWnd, uint hDC) Library "user32"
+Among them, Get/Release DC is used to get or release a device description table handle, and the PathCompactPathA function can get a shortened string according to the device environment and the length of the string and the number of pixels to be filled.
+Long ll_HDC
+String ls_Text = "c:\Program Files\PBDR\PBDelta\PBDelta3.exe"
+Long ll_Pixels = 150
+ll_HDC = GetDC( Handle( parent))
+PathCompactPathA( ll_HDC, ls_Text, ll_Pixels)
+ReleaseDC( Handle( parent ), ll_HDC)
+MessageBox('text', ls_Text)
+6. Implement the help function in the program
+PowerBuilder provides a ShowHelp function, but this function is very imperfect. In order to improve flexibility, users also need to call WinHelp and HTMLHelp functions to display various help information, such as context help information, search help, and so on.
+function long WinHelpA(ulong hwind, string lpszHelp, uint uCommand, ulong dwData) library "user32"
+integer HELP_CONTEXT = 1
+integer HELP_CONTENTS = 3
+integer HELP_CONTEXTPOPUP = 8
+integer HELP_FINDER = 11
+бн
+WinHelp( 0,, HELP_FINDER, 0)
+бн
+WinHelp( 0,, HELP_CONTEXTPOPUP, 0)
+
+The help document in HTML format can be called like this:
+long HH_DISPLAY_TOPIC = 0
+Function Long HtmlHelpA (long hwnd ,string lpHelpFile, long wCommand, string dwData) Library "hhctrl.ocx"
+
+htmlhelpA(handle(parent), "a.chm" + &
+  ">" + "main", HH_DISPLAY_TOPIC, "about_connection_mgmt.htm")
+htmlhelpA(handle(parent), "a.chm" + &
+  ">" + "main", HH_DISPLAY_TOPIC, "conn_check_messages.htm")
+7. Register OCX components while the application is running
+Before any program uses a component, it must be registered in advance, because the loading information of each component is obtained from the system registry. Most COM components are self-registration components, that is, these components generally output four standard API functions. By calling these functions, the self-registration of the component can be realized, and the interface and path information of the component can be written into the specified key of the registry. under.
+The output information of these functions is shown in Figure 37, which is obtained by using the View Depends tool in Visual C++.
+ 
+Figure 38 The output function of the dynamic link library
+You can see that this component outputs a function called DLLRegisterServer. This function is very simple to call without parameters. In fact, almost all components output this function. In order to call the component in the running state, you can use the code to register it before the call.
+    First, we must declare this function to identify the path of the dynamic link library.
+Function long DllRegisterServer() Library "ocxname.OCX"
+LONG ll_RC
+ll_RC = DllRegisterServer()
+8. Conversion between long file name and short file name
+Windows provides two functions to realize the conversion between the two. The declaration of these two functions is as follows:
+function long GetLongPathNameA(string lpLong, ref string lpShort, long lBuff) library'kernel32'
+function long GetShortPathNameA( string lpLong, ref string lpShort, long lBuff) library'kernel32'
+Note that sufficient space must be allocated for the receiving string buffer when calling to avoid buffer overflow.
+String ls_Buffer
+Long ll_RC
+ls_Buffer = Space( 255)
+ll_RC = GetShortPathNameA( as_Long, ls_Buffer, 255)
+RETURN ls_Buffer
+9. Get the Window system directory and Windows directory
+// Declare this as your Local External Function
+FUNCTION ulong GetTempPathA (long nBufferLength, &
+   ref string lpBuffer) LIBRARY "KERNEL32.DLL"
+
+Function uint GetWindowsDirectoryA( ref string dirtext, uint textlen) library "KERNEL32.DLL"
+Function uint GetSystemDirectoryA( ref string dirtext, uint textlen) library "KERNEL32.DLL"
+String ls_WinPath
+ls_WinPath = Space( 128)
+GetWindowsDirectory( ls_WinPath, 128)
+10. Show and hide the desktop and taskbar
+In some situations, users often want their programs to be executed exclusively. These programs do not want end users to interact with the desktop and taskbar. The best way is to hide the desktop and taskbar.
+   The implementation code is as follows:
+Function long FindWindowExA (long hWnd, long hWndChild, ref string lpszClassName, &
+   ref string lpszWindow) library'user32'
+Function long ShowWindow (long hWnd, long nCmdShow) library'user32'
+
+Constant Long SW_HIDE = 0
+Constant Long SW_NORMAL = 1
+Constant Long SW_SHOWMINIMIZED = 2
+Constant Long SW_SHOWMAXIMIZED = 3
+Constant Long SW_SHOWNOACTIVATE = 4
+Constant Long SW_SHOW = 5
+Constant Long SW_MINIMIZE = 6
+Constant Long SW_SHOWMINNOACTIVE = 7
+Constant Long SW_SHOWNA = 8
+Constant Long SW_RESTORE = 9
+Constant Long SW_SHOWDEFAULT = 10
+// The name of the Shell window to find
+String ls_ShellViewWnd = "Progman"
+String ls_ShellTaskBarWnd = "Shell_TrayWnd"
+String ls_Null
+// local variables
+Long ll_HTaskBar, ll_HDeskTop
+//Hide the taskbar
+ll_HTaskBar = FindWindowExA( 0, 0, ls_ShellTaskBarWnd, ls_Null)
+ShowWindow( ll_HTaskBar, SW_HIDE)
+// hide desktop
+ll_HDeskTop = FindWindowExA( 0, 0, ls_ShellViewWnd, ls_Null)
+ShowWindow( ll_HDeskTop, SW_HIDE)
+MessageBox('pbdr.com','look no hands!')
+//Display the taskbar
+ll_HTaskBar = FindWindowExA( 0, 0, ls_ShellTaskBarWnd, ls_Null)
+ShowWindow( ll_HTaskBar, SW_SHOW)
+// Show desktop
+ll_HDeskTop = FindWindowExA( 0, 0, ls_ShellViewWnd, ls_Null)
+ShowWindow( ll_HDeskTop, SW_SHOW)
+
+12. Map network drive
+This code can map network resources into a drive for use.
+FUNCTION ulong WNetUseConnectionA (ulong hwndOwner, &
+   REF s_netresource lpNetResource, string lpPassword,
+   string lpUsername, ulong dwFlags, REF string lpAccessName, &
+   REF ulong lpBufferSize, REF ulong lpResult) library "mpr.dll"
+Structure Definition:
+$PBExportHeader$s_netresource.srs
+global type s_netresource from structure
+ unsignedlong dwScope
+ unsignedlong dwType
+ unsignedlong dwDisplayType
+ unsignedlong dwUsage
+ string lpLocalName
+ string lpRemoteName
+ string lpComment
+ string lpProvider
+end type
+Mapping Code:
+CONSTANT ulong NO_ERROR = 0
+CONSTANT ulong CONNECT_REDIRECT = 128
+CONSTANT ulong RESOURCETYPE_DISK = 1
+s_netresource lstr_netresource
+String ls_null
+String ls_buffer
+String ls_MappedDrive
+uLong ll_bufferlen
+uLong ll_null
+uLong ll_ErrInfo
+uLong ll_success
+SetNull(ll_null)
+SetNull(ls_null)
+ls_buffer = Space(32)
+ll_bufferlen = Len(ls_buffer)
+lstr_netresource.dwType = RESOURCETYPE_DISK
+lstr_netresource.lpLocalName = ls_null
+lstr_netresource.lpRemoteName = "UNC resource name here"
+lstr_netresource.lpProvider = ls_null
+ 
+ll_ErrInfo = WNetUseConnectionA(ll_null, lstr_netresource, &
+   'password','username', CONNECT_REDIRECT, ls_buffer, ll_bufferlen, ll_success)
+ IF ll_ErrInfo = NO_ERROR THEN
+   MessageBox("Drive Mapped", "Drive Letter is "+ ls_buffer)
+   Return 1
+ELSE
+   MessageBox("Mapping Falied", "Error is "+ String(ll_ErrInfo))
+   Return -1
+END IF

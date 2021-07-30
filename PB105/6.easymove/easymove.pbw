@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "a_easymove.pbt";
+@end;
+DefaultTarget "a_easymove.pbt";
+DefaultRemoteTarget "a_easymove.pbt";

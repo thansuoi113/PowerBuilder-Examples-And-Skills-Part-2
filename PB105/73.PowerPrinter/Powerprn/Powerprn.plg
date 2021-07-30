@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: powerprn - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo".\Release/powerprn.res" /d "NDEBUG" "C:\private\marco\powerprinter\powerprn.rc"" 
+Creating temporary file "C:\DOCUME~1\marco\LOCALS~1\Temp\RSP79.tmp" with contents
+[
+/nologo /MT /W3 /GX /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_MBCS" /D "_USRDLL" /Fp".\Release/Powerprn.pch" /Yu"stdafx.h" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\private\marco\powerprinter\About.cpp"
+"C:\private\marco\powerprinter\cwin32prn.cpp"
+"C:\private\marco\powerprinter\CWIN95PRN.CPP"
+"C:\private\marco\powerprinter\CWINNTPRN.CPP"
+"C:\private\marco\powerprinter\powerprn.cpp"
+"C:\private\marco\powerprinter\WinPrn.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\marco\LOCALS~1\Temp\RSP79.tmp" 
+Creating temporary file "C:\DOCUME~1\marco\LOCALS~1\Temp\RSP7A.tmp" with contents
+[
+/nologo /MT /W3 /GX /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_MBCS" /D "_USRDLL" /Fp".\Release/Powerprn.pch" /Yc"stdafx.h" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"C:\private\marco\powerprinter\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\marco\LOCALS~1\Temp\RSP7A.tmp" 
+Creating temporary file "C:\DOCUME~1\marco\LOCALS~1\Temp\RSP7B.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:no /pdb:".\Release/Powerprn.pdb" /debug /machine:I386 /def:".\powerprn.def" /out:".\Release/Powerprn.dll" /implib:".\Release/Powerprn.lib" 
+.\Release\About.obj
+.\Release\cwin32prn.obj
+.\Release\CWIN95PRN.OBJ
+.\Release\CWINNTPRN.OBJ
+.\Release\powerprn.obj
+.\Release\StdAfx.obj
+.\Release\WinPrn.obj
+.\Release\powerprn.res
+]
+Creating command line "link.exe @C:\DOCUME~1\marco\LOCALS~1\Temp\RSP7B.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+About.cpp
+cwin32prn.cpp
+CWIN95PRN.CPP
+CWINNTPRN.CPP
+powerprn.cpp
+WinPrn.cpp
+Generating Code...
+Linking...
+   Creating library .\Release/Powerprn.lib and object .\Release/Powerprn.exp
+
+
+
+<h3>Results</h3>
+Powerprn.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

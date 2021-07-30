@@ -1,0 +1,8 @@
+LIBRARY	"SysInfo"
+
+EXPORTS
+GetCPUSpeed @1 private
+GetCPUType @2 private
+GetCPUFamlily @3 private
+GetCPUModel @4 private
+GetCPUStepping @5 private

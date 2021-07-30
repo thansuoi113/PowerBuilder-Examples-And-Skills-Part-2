@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "pbtoword1.pbt";
+@end;
+DefaultTarget "pbtoword1.pbt";
+DefaultRemoteTarget "pbtoword1.pbt";

@@ -1,0 +1,28 @@
+; PrintCtrl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "PrintCtrl"
+DESCRIPTION  'PrintCtrl Windows Dynamic Link Library'
+
+EXPORTS
+    PrintOpen_         ; 打开打印机
+	PrintClose_        ; 关闭打印机
+	PrintSend_         ; 发送打印字符串
+	IsWindowsNT        ; 判断操作系统是不是NT
+	About              ; 显示关于对话框
+	GetDefaultPrinter  ; 获得系统默认的打印机
+	GetPrinterPort     ; 获得指定打印机的端口和驱动
+	GetPrinterList     ; 获得系统打印机列表
+	GetPrinterStatus   ; 获得打印机状态
+	GetPaperList       ; 获得指定打印机的纸张列表
+	SetPrinterDefault  ; 将指定的打印机设置为默认打印机
+	AddCustomPaper     ; 增加自定义纸张(仅在NT下有效)
+	DeleteCustomPaper  ; 删除自定义纸张(仅在NT下有效)
+	SetUserDefinePaper ; 设置用户自定义打印纸张的大小
+	GetUserDefinePaperMinMax ; 获得指定打印机所支持的自定义纸张大小范围
+	SetDefaultPaper    ; 将指定的纸张设置给指定的打印机作为默认纸张
+	GetDefaultPaper    ; 获取指定的打印机的默认纸张和打印方向
+	GetPaperSize       ; 获得指定纸张名称的纸张编号
+	GetPaperName       ; 获得指定纸张编号的纸张名称
+	GetBinNameList     ; 获得指定打印机的送纸器的名称列表
+	GetBin             ; 由指定的送纸器的名称获得送纸器的代码
+	GetBinName         ; 由指定的送纸器的代码返回送纸器的名称

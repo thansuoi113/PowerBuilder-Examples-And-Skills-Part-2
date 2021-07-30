@@ -1,0 +1,586 @@
+WATCOM Linker Version 11.0
+Copyright by Sybase, Inc., and its subsidiaries, 1985, 1997.
+新規作成:       99/05/26 11:15:41
+実行可能イメージ: getfont.dll
+a Windows NT ダイナミック・リンク・ライブラリ を作成中
+
+
+                        +------------+
+                        |  グループ  |
+                        +------------+
+
+グループ                        アドレス             サイズ
+=====                           =======              ====
+
+.idata                          00406000             000005f7
+DGROUP                          00407000             00012350
+
+
+
+                        +--------------+
+                        |  セグメント  |
+                        +--------------+
+
+セグメント             クラス         グループ      アドレス        サイズ
+=========              ======         =========      ========        ======
+
+BEGTEXT                CODE           AUTO           00401000        00000007
+_TEXT                  CODE           AUTO           00401010        00004caf
+TRANSFER CODE          CODE           AUTO           00405cc0        00000144
+.idata                 .idata         .idata         00406000        000005f7
+_NULL                  BEGDATA        DGROUP         00407000        00000004
+_AFTERNULL             BEGDATA        DGROUP         00407004        00000000
+CONST                  DATA           DGROUP         00407004        000006c0
+CONST2                 DATA           DGROUP         004076d0        00000054
+_DATA                  DATA           DGROUP         00407724        00000540
+XIB                    DATA           DGROUP         00407c64        00000000
+XI                     DATA           DGROUP         00407c64        00000024
+XIE                    DATA           DGROUP         00407c88        00000000
+YIB                    DATA           DGROUP         00407c88        00000000
+YI                     DATA           DGROUP         00407c88        00000018
+YIE                    DATA           DGROUP         00407ca0        00000000
+TIB                    DATA           DGROUP         00407ca0        00000000
+TI                     DATA           DGROUP         00407ca0        00000000
+TIE                    DATA           DGROUP         00407ca0        00000000
+DATA                   DATA           DGROUP         00407ca0        00000000
+_BSS                   BSS            DGROUP         00408010        00001340
+STACK                  STACK          DGROUP         00409350        00010000
+
+
+                        +----------------+
+                        | メモリ・マップ |
+                        +----------------+
+
+* = 参照されないシンボル
++ = シンボルはローカルでの参照のみです
+
+アドレス       シンボル
+========       ========
+
+モジュール: cu_cpplo.obj(c:\temp\getfont\cu_cpplo.cpp)
+0040114c+      near u_cpp_getfontinf::~u_cpp_getfontinf()
+004011a2+      near u_cpp_getfontinf::u_cpp_getfontinf()
+00401010+      u_cpp_getfontinfuf_init
+00401042+      u_cpp_getfontinfuf_getfontcount
+00401072+      u_cpp_getfontinfuf_getfontname
+004010a9+      u_cpp_getfontinf_CPP_CONSTRUCTOR
+0040110b+      u_cpp_getfontinf_CPP_DESTRUCTOR
+モジュール: lmain.obj(c:\temp\getfont\lmain.cpp)
+004011d8*      _DLLMain@12
+モジュール: u_cpp_lo.obj(c:\temp\getfont\u_cpp_lo.cpp)
+0040122a+      int near MyEnumfontFacesProc( tagLOGFONTA near *, tagTEXTMETRICA near *, long unsigned, int near * )
+00401323+      int near MyEnumfontCountProc( tagLOGFONTA near *, tagTEXTMETRICA near *, long unsigned, int near * )
+0040135a+      tagTrueTypeFontInfo near * near BuildFontList( void near *, int near * )
+004013fb       short near u_cpp_getfontinf::uf_getfontname( char near *, short )
+00401447       short near u_cpp_getfontinf::uf_init( long )
+004014a5       short unsigned near u_cpp_getfontinf::uf_getfontcount()
+00408010+      void near * near hdcGlobal
+00408014+      tagTrueTypeFontInfo near * near pArrayOfTTFInfo
+00408018+      int near iFace
+0040801c+      int near iNumOfFontFaces
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(stk)
+004014d7       __CHK
+004014e7*      __STK
+00401506*      __STKOVERFLOW_
+00401516*      __GRO
+00401536*      __alloca_probe
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(dtorarst)
+0040154a*      __wcpp_4_dtor_array_store__
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(opdelarr)
+0040156b*      void near operator delete []( void near * )
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(opdel)
+00401570*      void near operator delete( void near * )
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(opnew)
+00401579*      void near * near operator new( int unsigned )
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(undefed)
+004015cc*      __wcpp_4_undefed_cdtor__
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(dstrt386)
+004015de       __DLLstart_
+004015de*      __DLLstartw_
+004015de*      _DllMainCRTStartup@12
+004015de*      _wDllMainCRTStartup@12
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(enterdb)
+00401660*      __EnterWVIDEO_
+00407750*      ___WD_Present
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(xmsgwnt)
+00401690+      __exit_with_msg_
+004016cc*      __fatal_runtime_error_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mainwnt)
+00408020+      ___Is_DLL
+00407754*      ___TlsIndex
+00407758*      ___GetThreadPtr
+0040775c*      __AccessFileH
+00407760*      __ReleaseFileH
+00407764*      __InitAccessH
+00407768*      __FiniAccessH
+0040776c*      __AccessIOB
+00407770*      __ReleaseIOB
+00407774*      __AccessNHeap
+00407778*      __AccessFHeap
+0040777c*      __ReleaseNHeap
+004016f0*      __threadid_
+00401704+      __sig_null_rtn_
+00401718+      __NTInit_
+00401948*      __NTMainInit_
+0040199c*      __exit_
+00407780*      __ReleaseFHeap
+00407784*      __AccessTDList
+00407788*      __ReleaseTDList
+0040778c*      __AccessFList
+00407790*      __ReleaseFList
+00407794+      __ThreadExitRtn
+00407798+      ___sig_init_rtn
+0040779c*      ___sig_fini_rtn
+004077a0+      ___process_fini
+0040802c+      ___FirstThreadData
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(stabadt)
+00401a1b+      void near * near dtor_the_array( _RTARCTOR near * )
+00401a4f*      __wcpp_4_dtor_array__
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nfree)
+00401a70*      _nfree_
+00401a70*      free_
+00408650+      ___MiniHeapFreeRover
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nmalloc)
+00401b80*      _nmalloc_
+00401b80*      malloc_
+004077a4*      ___nheapbeg
+004077a8*      ___MiniHeapRover
+004077ac*      ___LargestSizeB4MiniHeapRover
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(cppdata)
+00408660*      __wint_thread_data_offset
+00408664*      __compiled_under_NT
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(fatalerr)
+00401c6d*      __wcpp_4_fatal_runtime_error__
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(dmainwnt)
+00401cb0*      __LibMain@12
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(segdefns)
+00401003*      ___begtext
+00407000*      __nullarea
+00407c64*      __Start_XI
+00407c88*      __End_XI
+00407c88*      __Start_YI
+00407ca0*      __End_YI
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nthdl)
+004077b0*      ___FileHandleIDs
+00401e50*      __NTAtMaxFiles_
+00401ea4*      __NTAddFileHandle_
+00401f28*      __NTAddSpecificFileHandle_
+00401ffc*      __NTRemoveFileHandle_
+00402030*      __NTInitFileHandles_
+00402090+      __NTGetFakeHandle_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mthread)
+004020e4+      __NTGetCriticalSection_
+00402188+      __NTDeleteCriticalSection_
+004021b8+      __NTFreeCriticalSection_
+00402210+      __CloseSemaphore_
+00402220+      __AccessIOB_
+0040222c+      __ReleaseIOB_
+00402238+      __AccessFileH_
+00402248+      __ReleaseFileH_
+00402258+      __InitAccessH_
+00402260+      __FiniAccessH_
+0040227c+      __AccessNHeap_
+00402284+      __ReleaseNHeap_
+00402290+      __AccessFHeap_
+00402298+      __ReleaseFHeap_
+004022a4+      __AccessTDList_
+004022ac+      __ReleaseTDList_
+004022b4+      __AccessFList_
+004022bc+      __AccessSemaphore_
+00402318+      __ReleaseFList_
+00402320+      __ReleaseSemaphore_
+00402348+      __MultipleThread_
+0040238c*      __AllocInitThreadData_
+004023c8*      __NTThreadInit_
+00402428*      __NTAddThread_
+0040247c*      __NTRemoveThread_
+004024e0+      __NTThreadFini_
+00402504*      __InitMultipleThread_
+004077bc+      ___AccessSema4
+004077c0+      ___ReleaseSema4
+004077c4+      ___CloseSema4
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(crwdata)
+004077e8*      __psp
+00407813*      __osmajor
+00407814*      __osminor
+00407815*      __osbuild
+00407817*      __osver
+0040781b*      __winmajor
+0040781f*      __winminor
+00407823*      __winver
+0040780a*      __Extender
+0040780b*      __ExtenderSubtype
+0040780c*      __X32VM
+004077ec*      __x386_stacklow
+004077d0*      __LpCmdLine
+004077d4*      __LpPgmName
+004077d8*      __LpDllName
+004077dc*      __LpwCmdLine
+004077e0*      __LpwPgmName
+004077e4*      __LpwDllName
+004077c8*      __dynend
+004077cc*      __curbrk
+004077ec*      __STACKLOW
+004077f0*      __STACKTOP
+004077f4*      __ASTACKSIZ
+004077f8*      __ASTACKPTR
+004077fc*      __cbyte
+00407800*      __cbyte2
+00407804*      __child
+0040780d*      __Envptr
+00407811*      __Envseg
+00407808*      __no87
+00407827*      __FPE_handler
+00407827*      ___FPE_handler
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(environ)
+00408df0*      ___env_mask
+00408df4*      _environ
+00408df8*      __wenviron
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(getmodfn)
+004026a0*      __lib_GetModuleFileNameW_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(strdup)
+00402740*      __clib_strdup_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(istable)
+0040782c*      __IsTable
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(ustrdup)
+00402790*      __clib_wcsdup_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(stklmwnt)
+004027c0*      __init_stack_limits_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(excptwnt)
+00402aa8+      ___ExceptionFilter
+00402c70*      __NewExceptionHandler_
+00402cbc*      __DoneExceptionHandler_
+00407930+      ___oscode_check_func
+00407934+      ___raise_func
+00408e00*      _sw
+00408e04+      ___ExceptionHandled
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(initrtns)
+00402cec*      __InitRtns
+00402d3c*      __FiniRtns
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mem)
+00402d90*      __MemAllocator
+00402e40*      __MemFree
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(heapmod)
+00408e10*      ___nheap_clean
+00408e11*      ___fheap_clean
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(grownear)
+004030a4*      __ExpandDGROUP_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nmemneed)
+00403110*      __nmemneed_
+モジュール: D:\SYBASE\watcnt\lib386\nt\plibmt3r.lib(thrddata)
+00403113*      __wcpp_4_multi_thread_init__
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(exit)
+00403130+      __null_int23_exit_
+00403134*      exit_
+00403160+      _exit_
+0040794c+      ___int23_exit
+00407950+      ___FPE_handler_exit
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(lmainwnt)
+00403190*      _LibMain@12
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(ddgrpwnt)
+004031b0*      __disallow_single_dgroup_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(rdllmwnt)
+00407954*      __pRawDllMain
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(cinit)
+00403290*      __CommonInit_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(dosseg)
+00001234*      __DOSseg__
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(iomode)
+004032a0*      __IOMode_
+004032f8*      __SetIOMode_
+00407958*      ___NFiles
+0040795c+      ___init_mode
+004079ac+      __iomode
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nrealloc)
+00403320*      _nrealloc_
+00403320*      realloc_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(calloc)
+004033a0*      calloc_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(trdlist)
+004033c0*      __GetThreadData_
+004033fc*      __ReallocThreadData_
+004034d0*      __AddThreadData_
+00403534*      __RemoveThreadData_
+00403580*      __ResizeThreadDataList_
+004035a8*      __FreeThreadDataList_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(regdata)
+004035e0*      __RegisterThreadDataSize_
+004079b0*      ___ThreadDataSize
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mthrdini)
+00403610*      __InitThreadData_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(trdalloc)
+00403640*      __FiniThreadProcessing_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nheapmin)
+00403650*      _nheapshrink_
+00403650*      _nheapmin_
+00403650*      _heapmin_
+00403650*      _heapshrink_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(setenvp)
+00403728*      __setenvp_
+0040380c*      __freeenvp_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(ustrlen)
+00403860*      wcslen_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(memcpy)
+00403880*      memcpy_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(conutwnt)
+004038b0*      __NTRealKey_
+00403948*      __NTConsoleInput_
+00403954*      __NTConsoleOutput_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(fclex387)
+00403960*      _ClearFPE_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(signlwnt)
+004079bc+      _SignalTable
+00403970+      __SetSignalFunc_
+004039b8+      __GetSignalFunc_
+004039dc+      __GetSignalOSCode_
+00403a00+      __CheckSignalExCode_
+00403b28+      __sigabort_
+00403b34*      __sigfpe_handler_
+00403b78*      signal_
+00403c28+      raise_
+00403c98+      __SigInit_
+00403ce0+      __SigFini_
+00403d10+      __sig_init_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(heapen)
+00403d30*      _heapenable_
+00407a28*      ___heap_enabled
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(amblksiz)
+00407a2c*      __amblksiz
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(winrtns)
+00407a30*      __WindowsIsWindowedHandle
+00407a34*      __WindowsRemoveWindowedHandle
+00407a38*      __WindowsNewWindow
+00407a3c*      __WindowsCloseWindow
+00407a40*      __WindowsSetAbout
+00407a44*      __WindowsSetAppTitle
+00407a48*      __WindowsSetConTitle
+00407a4c*      __WindowsDestroyOnClose
+00407a50*      __WindowsYieldControl
+00407a54*      __WindowsShutDown
+00407a58*      __WindowsStdin
+00407a5c*      __WindowsStdout
+00407a60*      __WindowsKbhit
+00407a64*      __WindowsGetch
+00407a68*      __WindowsGetche
+00407a6c*      __WindowsPutch
+00407a70*      __WindowExitRtn
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(isattwnt)
+00403d60*      isatty_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nmsize)
+00403dd0*      _nmsize_
+00403dd0*      _msize_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(nexpand)
+00403de0*      _nexpand_
+00403de0*      _expand_
+00403e1c+      __HeapManager_expand_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(memset)
+00403fe0*      memset_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(register)
+00404004*      _beginthread_
+0040400c*      _endthread_
+00404014*      __initthread_
+0040401c*      __RegisterThreadData_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(dofilstr)
+00404060*      __ParsePosixHandleStr_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(clearenv)
+00404180*      clearenv_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(seterrno)
+00404220*      __set_errno_
+00404230*      __set_EDOM_
+00404244*      __set_ERANGE_
+00404258*      __set_EINVAL_
+00404268*      __set_doserrno_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(abort)
+00404280*      abort_
+00404288*      __terminate_
+00407a80*      ___abort
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(cntrl87)
+004042a0*      _control87_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(__stos)
+004042f0*      __STOSB
+00404327*      __STOSD
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(thredwnt)
+00404434*      __CBeginThread_
+00404520*      __CEndThread_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(getenv)
+00404550*      getenv_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(strncpy)
+004045b0*      strncpy_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(strtol)
+00404734*      strtoul_
+00404740*      strtol_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(putenv)
+004047b0*      putenv_
+0040496c+      __putenv_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(01h)
+00407b10*      __8087
+00407b11*      __real87
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(itoa)
+00404c20+      utoa_
+00404c6c*      itoa_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbsnicmp)
+00404c90*      _mbsnicmp_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(tolower)
+00404d10*      tolower_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbschr)
+00404d20*      _mbschr_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbslen)
+00404d80*      _mbslen_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(dosret)
+00404db0*      _dosret0_
+00404db8*      _dosretax_
+00404dbc*      __set_errno_dos_
+00404e24*      __set_errno_nt_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbstowcs)
+00404e40*      mbstowcs_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(uputenv)
+00404ec0*      _wputenv_
+00405058*      __wputenv_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(memmove)
+004052f0*      memmove_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(toupper)
+00405340*      toupper_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(chk8087)
+0040535c+      __init_8087_
+00405390*      _fpreset_
+0040539c*      __chk8087_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbterm)
+004053e0*      _mbterm_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbcicmp)
+00405420*      _mbcicmp_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbsinc)
+00405480*      _mbsinc_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbconv)
+004054b0*      _mbvtop_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbclen)
+004054d0*      _mbclen_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbccmp)
+00405500*      _mbccmp_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbtowc)
+00405560*      mbtowc_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(ustrchr)
+00405600*      wcschr_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(setenvar)
+00405630*      __lib_SetEnvironmentVariableW_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(crtwenv)
+00405730*      __create_wide_environment_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(wcstombs)
+00405790*      wcstombs_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(utoupper)
+00405850*      towupper_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(save8087)
+00407b50*      ___Save8087
+00407b54*      ___Rest8087
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(8087cw)
+00407b58*      __8087cw
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(init8087)
+00405870*      __init_80x87
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbisdbcs)
+00409230*      ___IsDBCS
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbislead)
+004058a0*      _ismbblead_
+00409240*      ___MBCSIsTable
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbccpy)
+004058c0*      _mbccpy_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbsupr)
+00405900*      _mbsupr_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbinit)
+00405950*      __mbinit_
+00407b5c*      ___MBCodePage
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(wctomb)
+00405ac0*      wctomb_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbsnextc)
+00405b00*      _mbsnextc_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbcupper)
+00405b40*      _mbctoupper_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbdtoupp)
+00405bb0*      _mbdtoupper_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(ismbdlow)
+00405bd0*      _ismbdlower_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbislegl)
+00405c20*      _ismbclegal_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(mbistrai)
+00405c60*      _ismbbtrail_
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(isktable)
+00407b60*      __IsKTable
+モジュール: D:\SYBASE\watcnt\lib386\nt\clib3r.lib(strcpy)
+00405ca0       strcpy_
+
+
+                        +----------------------+
+                        |  インポート シンボル |
+                        +----------------------+
+
+シンボル                            モジュール
+========                            ===========
+
+_SetStdHandle@8                     KERNEL32.dll
+_GetStdHandle@4                     KERNEL32.dll
+_CreateEventA@16                    KERNEL32.dll
+_InitializeCriticalSection@4        KERNEL32.dll
+_DeleteCriticalSection@4            KERNEL32.dll
+_GetCurrentThreadId@0               KERNEL32.dll
+_EnterCriticalSection@4             KERNEL32.dll
+_LeaveCriticalSection@4             KERNEL32.dll
+_GetLastError@0                     KERNEL32.dll
+_TlsGetValue@4                      KERNEL32.dll
+_SetLastError@4                     KERNEL32.dll
+_TlsAlloc@0                         KERNEL32.dll
+_TlsSetValue@8                      KERNEL32.dll
+_CloseHandle@4                      KERNEL32.dll
+_TlsFree@4                          KERNEL32.dll
+_GetModuleFileNameW@12              KERNEL32.dll
+_MultiByteToWideChar@24             KERNEL32.dll
+_VirtualQuery@12                    KERNEL32.dll
+_LoadLibraryA@4                     KERNEL32.dll
+_GetProcAddress@8                   KERNEL32.dll
+_UnhandledExceptionFilter@4         KERNEL32.dll
+_SetUnhandledExceptionFilter@4      KERNEL32.dll
+_VirtualAlloc@16                    KERNEL32.dll
+_MessageBoxA@16                     USER32.dll
+_VirtualFree@12                     KERNEL32.dll
+_FreeEnvironmentStringsA@4          KERNEL32.dll
+_CreateFileA@28                     KERNEL32.dll
+_SetConsoleCtrlHandler@8            KERNEL32.dll
+_GetFileType@4                      KERNEL32.dll
+_SetEvent@4                         KERNEL32.dll
+_GetCurrentThread@0                 KERNEL32.dll
+_CreateThread@24                    KERNEL32.dll
+_WaitForSingleObject@8              KERNEL32.dll
+_ExitThread@4                       KERNEL32.dll
+_SetEnvironmentVariableA@8          KERNEL32.dll
+_SetEnvironmentVariableW@8          KERNEL32.dll
+_GetACP@0                           KERNEL32.dll
+_GetOEMCP@0                         KERNEL32.dll
+_GetCPInfo@8                        KERNEL32.dll
+_WideCharToMultiByte@32             KERNEL32.dll
+_CharUpperBuffA@8                   USER32.dll
+_WriteFile@20                       KERNEL32.dll
+_ExitProcess@4                      KERNEL32.dll
+_GetEnvironmentStrings@0            KERNEL32.dll
+_GetVersion@0                       KERNEL32.dll
+_GetModuleFileNameA@12              KERNEL32.dll
+_GetCommandLineA@0                  KERNEL32.dll
+_GetCommandLineW@0                  KERNEL32.dll
+_GetModuleHandleA@4                 KERNEL32.dll
+_LocalAlloc@8                       KERNEL32.dll
+_EnumFontFamiliesA@16               GDI32.dll
+_GetDC@4                            USER32.dll
+_ReleaseDC@8                        USER32.dll
+_lstrcpyA@8                         KERNEL32.dll
+
+
+                        +--------------------+
+                        |   使用ライブラリ   |
+                        +--------------------+
+
+
+
+                        +-----------------------+
+                        |     リンカー統計      |
+                        +-----------------------+
+
+スタック サイズ:  00010000 (65536.)
+メモリ サイズ:  0001774b (96075.)
+エントリアドレス: 004015de
+リンク時間: 00:00.05

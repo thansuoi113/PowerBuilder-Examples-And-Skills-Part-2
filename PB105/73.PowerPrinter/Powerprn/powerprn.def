@@ -1,0 +1,171 @@
+;//+-------------------------------------------------------------------
+;//
+;// PowerPrinter
+;//
+;// Copyright (c) 1997, 1998, 1999, 2000, 2001
+;// SecureWave. All rights reserved
+;//
+;// See the file LICENSE.TXT for redistribution information.
+;//
+;// File:PowerPrn.def
+;//
+;// Contents:DLL definition file (32 bit version)
+;// Contains explicit function exports
+;//
+;//--------------------------------------------------------------------
+
+LIBRARY "POWERPRN"
+;DESCRIPTION "POWERPRN Copyright (c) 1997 by DigitaWave Sarl"
+
+EXPORTS
+	; Explicit exports can go here
+
+	CWin32Prn_CPP_CONSTRUCTOR
+	CWin32Prn_CPP_DESTRUCTOR
+	dwGetDefaultPrinterName
+	dwGetPrinterList
+	dwGetDefaultPrinterPort		
+	dwGetDefaultPrinterDriver	
+	dwSetDefaultPrinter			
+
+	; Get/Set Printer Orientation
+	dwSetPrinterOrientation		
+	dwGetPrinterOrientation		
+
+	; Get/Set Paper Size
+	dwSetPaperSize				
+	dwGetPaperSize				
+
+	; Get/Set Paper Length
+	dwSetPaperLength			
+	dwGetPaperLength			
+
+	; Get/Set Paper Width
+	dwSetPaperWidth				
+	dwGetPaperWidth				
+
+	; Scale
+	dwGetScale					
+	dwSetScale					
+
+	; Copies
+	dwGetCopies					
+	dwSetCopies					
+
+	; Default Source
+	dwGetDefaultSource			
+	dwSetDefaultSource			
+
+	; Get/Set Print Quality
+	dwSetPrintQuality			
+	dwGetPrintQuality			
+
+	; Color
+	dwGetColor					
+	dwSetColor					
+
+	; Duplex
+	dwGetDuplex					
+	dwSetDuplex					
+
+	; YResolution
+	dwGetYResolution			
+	dwSetYResolution			
+
+	; TTOption
+	dwGetTTOption				
+	dwSetTTOption				
+
+	; Collate
+	dwGetCollate				
+	dwSetCollate				
+
+	; LOgPixels
+	dwGetLogPixels				
+	dwSetLogPixels				
+
+	; BitsPerPel
+	dwGetBitsPerPel				
+	dwSetBitsPerPel				
+
+	; PelsWidth
+	dwGetPelsWidth				
+	dwSetPelsWidth				
+
+	; PelsHeight
+	dwGetPelsHeight				
+	dwSetPelsHeight				
+
+	; DisplayFlags
+	dwGetDisplayFlags			
+	dwSetDisplayFlags			
+
+	; DisplayFrequency
+	dwGetDisplayFrequency		
+	dwSetDisplayFrequency		
+
+	; others
+	dwSetDefaultPrinterEx		
+	dwGetDefaultPrinterEx		
+
+	; Paper Bin
+	dwGetPaperBinList			
+	dwGetNamedPaperBinList		
+	dwGetSupportedPaperSizeList	
+
+	; Printer Access
+	dwSetPrinterAccess			
+	dwGetPrinterAccess			
+
+
+	dwAddPrinterConnection		
+	dwDeletePrinterConnection	
+	dwAddPrinter				
+	dwDeletePrinter				
+	dwAddPrinterDriver			
+	dwDeletePrinterDriver		
+	dwGetPrinterDriver			
+	dwGetPrinterDrivers			
+	dwEnumPrinterJobs			
+	dwEnumPrinterFonts			
+	dwGetExtendedErrorCode		
+	dwGetExtendedErrorMessage	
+	dwUnlock					
+	dwAbout						
+
+	;Fonts
+	dwSetPrinterFont			
+
+	;printer port
+	dwSetDefaultPrinterPort		
+	dwGetNamedPaperBinListEx	
+	dwGetPaperBinListEx			
+
+	; version 1.1.01
+	dwGetPrinterListEx			
+
+	dwCaptureDesktop			
+	dwPrintTheDIB				
+	dwCaptureWindow				
+
+
+	; version 1.2
+	dwGetPrinterStatus			
+	dwSetJobProperties			
+	dwEnumPrinterJobsVB			
+	dwSetDocumentProperties		
+	dwSetFormName				
+	dwGetPaperExtents			
+	dwPrintRawData				
+	dwRawOpen					
+	dwRawNewPage				
+	dwRawWrite					
+	dwRawEndPage				
+	dwRawClose					
+	dwRawPrinterProperties		
+	dwOpen						
+	dwNewPage					
+	dwEndPage					
+	dwClose						
+	dwGetPrinterForms			
+	dwSetPrinterAttributes		

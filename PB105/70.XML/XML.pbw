@@ -1,0 +1,9 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "xmlapp.pbt";
+ 1 "..\\\xca\xb5\xc0\xfd62\\dw2htmlapp.pbt";
+@end;
+DefaultTarget "xmlapp.pbt";
+DefaultRemoteTarget "xmlapp.pbt";

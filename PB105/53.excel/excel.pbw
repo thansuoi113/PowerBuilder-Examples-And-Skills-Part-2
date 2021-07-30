@@ -1,0 +1,9 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "excel.pbt";
+ 1 "excel_ole_demo.pbt";
+@end;
+DefaultTarget "excel_ole_demo.pbt";
+DefaultRemoteTarget "excel_ole_demo.pbt";

@@ -1,0 +1,9 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "wsh.pbt";
+ 1 "..\\\xca\xb5\xc0\xfd85\\language.pbt";
+@end;
+DefaultTarget "wsh.pbt";
+DefaultRemoteTarget "wsh.pbt";

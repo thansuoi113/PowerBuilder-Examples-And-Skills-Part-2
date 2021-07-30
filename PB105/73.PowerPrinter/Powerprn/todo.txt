@@ -1,0 +1,5 @@
+fINISH gETfORMS -- IS TEST WITH fORMtYPE CORRECT ?
+
+Add AddFrom, DeleteForm, GetForm
+
+Finish SetDefaultForm

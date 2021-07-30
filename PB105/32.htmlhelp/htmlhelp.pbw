@@ -1,0 +1,10 @@
+Save Format v3.0(19990112)
+@begin Unchecked
+@end;
+@begin Targets
+ 0 "htmlhelp.pbt";
+ 1 "winhelp.pbt";
+ 2 "sdk.pbt";
+@end;
+DefaultTarget "sdk.pbt";
+DefaultRemoteTarget "sdk.pbt";

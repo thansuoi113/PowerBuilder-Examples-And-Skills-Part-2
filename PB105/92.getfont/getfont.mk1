@@ -1,0 +1,37 @@
+!define BLANK ""
+c:\temp\getfont\cu_cpplo.obj : c:\temp\getfont\cu_cpplo.cpp .AUTODEPEND
+ @c:
+ cd c:\temp\getfont
+ *wpp386 cu_cpplo.cpp -i=D:\SYBASE\watcnt\h;D:\SYBASE\watcnt\h\nt -w4 -e25 -&
+zq -od -d2 -bd -5r -bt=nt -mf
+
+c:\temp\getfont\lmain.obj : c:\temp\getfont\lmain.cpp .AUTODEPEND
+ @c:
+ cd c:\temp\getfont
+ *wpp386 lmain.cpp -i=D:\SYBASE\watcnt\h;D:\SYBASE\watcnt\h\nt -w4 -e25 -zq &
+-od -d2 -bd -5r -bt=nt -mf
+
+c:\temp\getfont\u_cpp_lo.obj : c:\temp\getfont\u_cpp_lo.cpp .AUTODEPEND
+ @c:
+ cd c:\temp\getfont
+ *wpp386 u_cpp_lo.cpp -i=D:\SYBASE\watcnt\h;D:\SYBASE\watcnt\h\nt -w4 -e25 -&
+zq -od -d2 -bd -5r -bt=nt -mf
+
+c:\temp\getfont\getfont.dll : c:\temp\getfont\cu_cpplo.obj c:\temp\getfont\l&
+main.obj c:\temp\getfont\u_cpp_lo.obj c:\temp\getfont\u_cpp_lo.hpp .AUTODEPE&
+ND
+ @c:
+ cd c:\temp\getfont
+ @%write getfont.lk1 FIL cu_cpplo.obj,lmain.obj,u_cpp_lo.obj
+ @%append getfont.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b getfont.imp 
+ @%append getfont.lk1 LIBR getfont.imp
+!endif
+!ifneq BLANK ""
+ @%append getfont.lk1 op resource=
+!endif
+ *wlink name getfont d all op inc SYS nt_dll op m op maxe=25 op q @getfont.l&
+k1
+ copy getfont.dll D:\SYBASE\watcnt\binnt\getfont.dll
+
